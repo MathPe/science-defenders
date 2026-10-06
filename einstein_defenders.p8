@@ -13,7 +13,7 @@ GRAVITY_WELL_RADIUS=8
 GRAVITY_WELL_PULL=0.15
 
 --# init
-function init()
+function _init()
  srand(7)
  mode="title"
  t=0
@@ -31,7 +31,7 @@ function reset()
 end
 
 --# world update
-function update()
+function _update()
  t+=1
  if mode=="title" then
   if btn(4) or btn(5) or btn(0) or btn(1) or btn(2) or btn(3) then
@@ -137,7 +137,7 @@ function update_particles()
 end
 
 --# world draw
-function draw()
+function _draw()
  cls(0)
  if mode=="title" then
   draw_title()
@@ -256,4 +256,4 @@ function make_well_destroy_particles(x,y)
 end
 
 --# entry point
-init()
+_init()
