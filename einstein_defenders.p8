@@ -119,7 +119,7 @@ function update_wells()
   end
   if w.life<=0 then
    make_well_destroy_particles(w.x,w.y)
-   table.remove(wells,i)
+   del(wells,w)
   end
  end
 end
@@ -131,7 +131,7 @@ function update_particles()
   pt.y+=pt.vy
   pt.life-=1
   if pt.life<=0 then
-   table.remove(particles,i)
+   del(particles,pt)
   end
  end
 end
@@ -213,7 +213,7 @@ function shoot_well()
   vx=0
   vy=-GRAVITY_WELL_SPEED
  end
- table.insert(wells,{
+ add(wells,{
   x=p.x,y=p.y+2,
   vx=vx,vy=vy,
   life=120
