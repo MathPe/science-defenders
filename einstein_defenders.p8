@@ -73,7 +73,7 @@ function update_player()
  p.vy+=GRAVITY
  p.x+=p.vx
  p.y+=p.vy
- p.x=clamp(p.x,4,124)
+ p.x=min(124,max(4,p.x))
  if p.x<4 then p.vx=0 end
  if p.x>124 then p.vx=0 end
  if p.y>=108 then
